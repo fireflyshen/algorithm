@@ -19,7 +19,6 @@ var generateParenthesis = function (n) {
   }
   return dp[n];
 };
-
 /**
  * 动态规划
  */
