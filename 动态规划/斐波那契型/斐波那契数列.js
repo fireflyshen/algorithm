@@ -18,4 +18,4 @@ function f(n) {
   
 }
 
-console.log(f(7))
+console.log(f(2))
