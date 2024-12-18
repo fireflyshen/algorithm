@@ -39,20 +39,12 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if not nums:
-            return 0
-        
+            return 0        
         start = 0;
-        end = 1;
-        
-        
+        end = 1; 
         while end < len(nums):
             if nums[start] != nums[end]:
-                start += 1;
-                nums[start] = nums[end];
-            end+=1;
-        return start +1;
-
-
-
-
-
+                start += 1
+                nums[start] = nums[end]
+            end+=1
+        return start +1

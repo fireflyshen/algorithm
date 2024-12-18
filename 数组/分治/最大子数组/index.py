@@ -42,3 +42,4 @@ class Solution:
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 solution = Solution()
 print(solution.test(nums))  # 输出 6
+
