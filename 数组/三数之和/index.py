@@ -69,9 +69,3 @@ class Solution:
 
         return result
 
-# 测试代码
-s = Solution()
-a = s.threeSum([2, -1, -1, 1])
-print(a)
-
-     

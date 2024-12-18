@@ -23,11 +23,13 @@
 from typing import List,Dict
 
 class Solution:
+    
     def twoSum(self, nums: List[int], target: int) -> List[int]:
     
         record:Dict[int,int] = {};
         c = 0;
         for index in range(len(nums)):
+
             # 算出差值
             c = target - nums[index]
             if (record.get(c) != None):
