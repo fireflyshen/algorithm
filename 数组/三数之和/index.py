@@ -37,48 +37,35 @@ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
 
 from typing import List
 
-
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        if len(nums) == 3:
-            return [[nums[0] + nums[1] + nums[2]]] if nums[0] + nums[1] + nums[2] == 0 else [];
-        sortedArr = self.sort(nums);
-        result = [];
+        nums.sort()  # 直接使用 sorted() 排序
+        result = []
 
-        for index in range(len(sortedArr)):
-            if index > 0 and sortedArr[index] == sortedArr[index - 1]:
-                continue;
-            left = index + 1;
-            right = len(sortedArr) -1;
-            
-           
+        for index in range(len(nums)):
+            if index > 0 and nums[index] == nums[index - 1]:
+                continue  # 跳过重复的元素
+            left = index + 1
+            right = len(nums) - 1
+
             while left < right:
-                sum = sortedArr[index] + sortedArr[left] + sortedArr[right];
-                
-                if sum == 0:
-                    result.append([sortedArr[index],sortedArr[left],sortedArr[right]]);
-                    while left < right and sortedArr[left] == sortedArr[left + 1]:
-                        continue;
-                    while left < right and sortedArr[right] == sortedArr[right - 1]:
-                        continue;
-                    left+=1;
-                    right-=1;
-                elif sum < 0:
-                    left+=1;
+                total = nums[index] + nums[left] + nums[right]
+                if total == 0:
+                    result.append([nums[index], nums[left], nums[right]])
+
+                    # 跳过重复的元素
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+
+                    # 更新左右指针
+                    left += 1
+                    right -= 1
+                elif total < 0:
+                    left += 1
                 else:
-                    right-=1;
-        return result;
-      
+                    right -= 1
 
-    # 快速排序，没用上😅
-    def sort(self,nums: List[int]) -> List[int]:
-        if len(nums) <= 1:
-            return nums;
-        # 选择基准元素
-        pivot = nums[0];
+        return result
 
-        # 列表表达式，比基准小放左边，大放右边
-        left = [x for x in nums[1:] if x <= pivot];
-        right = [y for y in nums[1:] if y > pivot];
-        
-        return self.sort(left) + [pivot] + self.sort(right);
