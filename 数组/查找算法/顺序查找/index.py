@@ -13,6 +13,4 @@ s = Solution();
 
 t = s.linearSearch([1,23,42,34,698],42)
 
-print(t)
-                
-        
+print(t)                
