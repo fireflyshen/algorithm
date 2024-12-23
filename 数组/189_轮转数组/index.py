@@ -10,4 +10,4 @@ class Solution:
 
 
 s = Solution();
-s._189_rotate([1,2,3,4,5,6:q,7],3);
+s._189_rotate([1,2,3,4,5,6,7],3);
