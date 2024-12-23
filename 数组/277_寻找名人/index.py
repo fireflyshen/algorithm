@@ -1,3 +1,5 @@
+# Problem: 277.寻找名人
+
 class Solution:
     def knows(self, a: int, b: int) -> bool:
         ...

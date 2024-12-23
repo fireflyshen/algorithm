@@ -1,4 +1,4 @@
-# 27. 移除元素
+# Problem: 27.移除元素
 
 from typing import List
 
